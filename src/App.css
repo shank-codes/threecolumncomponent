@@ -1,38 +1,119 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #ffffff;
+  font-family: "Lucida Sans", "Lucida Sans Regular";
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+#root {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.card {
+  width: 900px;
+  height: 450px;
+  display: flex;
+  flex-direction: row;
+  border-radius: 0.75em;
+  background-color: hsl(244, 38%, 16%);
+  /* justify-content: space-around;
+  align-items: stretch; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.card1, .card2, .card3 {
+  padding: 2em;
+  display: grid;
+}
+
+.title {
+  font-family: Big Shoulders Display;
+  font-weight: 700;
+  font-size: xx-large;
+  color: hsl(0, 0%, 95%);
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+.description {
+  font-family: Lexend Deca;
+  font-weight: 400;
+  font-size: medium;
+  color: hsla(0, 0%, 100%, 0.75);
+  line-height: 1.7em;
+  margin-top: 0;
+
+}
+
+.btn {
+  width: 50%;
+  height: 3em;
+  border-radius: 2em;
+  border: 0 solid;
+  background-color: hsla(0, 0%, 95%);
+  font-family: Lexend Deca;
+  align-self: flex-end;
+}
+.card1>.btn {
+  color: hsl(31, 77%, 52%);
+}
+.card2>.btn {
+  color: hsl(184, 100%, 22%);
+
+}
+.card3>.btn {
+  color: hsl(179, 100%, 13%);
+}
+
+.card1>.btn:hover {
+  background-color: hsl(31, 77%, 52%);
+}
+.card2>.btn:hover {
+  background-color: hsl(184, 100%, 22%);
+
+}
+.card3>.btn:hover {
+  background-color: hsl(179, 100%, 13%);
+}
+
+.btn:hover {
+  color: hsla(0, 0%, 95%);
+  border: 2px solid;
+}
+
+.card1 {
+  background-color: hsl(31, 77%, 52%);
+  border-radius: 0.5em 0 0 0.5em;
+}
+
+.card2 {
+  background-color: hsl(184, 100%, 22%);
+}
+
+.card3 {
+  background-color: hsl(179, 100%, 13%);
+  border-radius: 0 0.5em 0.5em 0;
+}
+
+@media(max-width: 450px) {
+  .card {
+    flex-direction: column;
+    width: 85%;
+    margin-top: 3em;
+    margin-bottom: 3em;
   }
-  to {
-    transform: rotate(360deg);
+  .card1, .card2, .card3 {
+    grid-template-rows: repeat(3, 0.5fr);
+    grid-gap: 5px; /* Adjust the value to set the desired spacing */
+  }
+  .card1 {
+    border-radius: 0.5em 0.5em 0 0;
+  }
+  .card3 {
+    border-radius: 0 0 0.5em 0.5em;
   }
 }
